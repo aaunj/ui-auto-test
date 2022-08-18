@@ -15,7 +15,8 @@ Open google chrome
     
 
 Check Parking Lot 1
-    ${parkingStatusBefore}=    //div[@class='col border border-dark border-bottom-0 top green-c' or @class='col border border-dark border-bottom-0 top red-c'][5]/div[2]
+    Console    Get Title
+    ${parkingStatusBefore}=    Get Text    //div[@class='col border border-dark border-bottom-0 top green-c' or @class='col border border-dark border-bottom-0 top red-c'][5]/div[2]
     Console    \n Parking Lot 1 Status Before : ${parkingStatusBefore}
     Click Element    //div[@class='row'][1]/div[1]/div[3]
     ${parkingStatusAfter}=    //div[@id='11']/div[2]
