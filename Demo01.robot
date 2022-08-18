@@ -21,7 +21,7 @@ Check Parking Lot 1
     ${parkingStatusBefore}=    Get Text    //div[@id='11']/div[2]
     Console    \n Parking Lot 1 Status Before : ${parkingStatusBefore}
     Click Element    //div[@class='row'][1]/div[1]/div[3]
-    ${parkingStatusAfter}=    //div[@id='11']/div[2]
+    ${parkingStatusAfter}=    Get Text    //div[@id='11']/div[2]
     Console   \n Parking Lot 1 Status After : ${parkingStatusAfter}
     Should Be True      ${parkingStatusBefore} != ${parkingStatusAfter}
         
