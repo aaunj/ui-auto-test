@@ -10,10 +10,25 @@ Open google chrome
     Comment    Call Method    ${opt}    add_argument    --disable-setuid-sandbox
     Comment    Call Method    ${opt}    add_argument    --disable-dev-shm-usage
     Create Webdriver    Chrome    chrome_options=${opt}
-    Go To    https://ddoc.pea.co.th/login
+    Go To    http://prod.sandbox-me.com/
     Comment    Capture Page Screenshot
-    ${result}=    Get Text    //span[@class='ng-tns-c1-1']
+    
 
-    Log To Console    \n ${result}
+Check Parking Lot 1
+    ${parkingStatusBefore}=    //div[@id='11']/div[2]
+    Console    \n Parking Lot 1 Status Before : ${parkingStatusBefore}
+    Click Element    //div[@class='row'][1]/div[1]/div[3]
+    ${parkingStatusAfter}=    //div[@id='11']/div[2]
+    Console   \n Parking Lot 1 Status After : ${parkingStatusAfter}
+    Should Be True      ${parkingStatusBefore} != ${parkingStatusAfter}
+        
+
+
+Close google chrome
     [Teardown]    Close Browser
 
+
+*** Keywords ***
+Console
+    [Arguments]    ${output}
+    Log To Console    ${output}
