@@ -12,7 +12,8 @@ Open google chrome
     Create Webdriver    Chrome    chrome_options=${opt}
     Go To    https://ddoc.pea.co.th/login
     Comment    Capture Page Screenshot
-    ${result}=    Get Title
+    ${result}=    Get Text    /html/body/app-root/px-login/div/div/div[2]/form/div/span
+
     Log To Console    \n ${result}
     [Teardown]    Close Browser
 
