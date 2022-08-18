@@ -15,7 +15,8 @@ Open google chrome
     
 
 Check Parking Lot 1
-    ${titel}=     Get Title
+    Sleep   20sec
+    ${titel}=     Get Text    /html/body/app-root/div[@class='container']/body/h1
     Console    ${titel}
     ${parkingStatusBefore}=    Get Text    //html/body/app-root/div[@class='container']/body/app-parking/div[1]/div[@class='row'][1]/div[@id='11']/div[1]
     Console    \n Parking Lot 1 Status Before : ${parkingStatusBefore}
