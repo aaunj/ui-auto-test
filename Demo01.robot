@@ -17,7 +17,7 @@ Open google chrome
 Check Parking Lot 1
     ${titel}=     Get Title
     Console    ${titel}
-    ${parkingStatusBefore}=    Get Text    id:11
+    ${parkingStatusBefore}=    Get Text    //html/body/app-root/div[@class='container']/body/h1
     Console    \n Parking Lot 1 Status Before : ${parkingStatusBefore}
     Click Element    //div[@class='row'][1]/div[1]/div[3]
     ${parkingStatusAfter}=    //div[@id='11']/div[2]
